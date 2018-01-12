@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input id="display-toggle" type="checkbox">
+    <label for="display-toggle">Hide form</label>
+  </div>
+  <form id="the-form">
+    <input type="text">
+    <input type="password">
+    <input type="submit">
+  </form>
+  <script>
+    const logEvent = e => console.log(e.type, e.target);
+
+    document.addEventListener('focus', logEvent, true)
+    document.addEventListener('blur', logEvent, true)
+
+    setInterval(() => fetch(''), 2000);
+
+    document.getElementById('display-toggle').addEventListener('change', e => {
+      document.getElementById('the-form').style.display = e.target.checked ? 'none' : '';
+    });
+  </script>
+</body>
+</html>
